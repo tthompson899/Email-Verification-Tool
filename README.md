@@ -6,6 +6,8 @@
     - Once project is cloned, spin up the website at emailverificationtool.test
     <!-- see if there is a setup process for laravel valet -->
 
+- Seed User table with data
+    - `php artisan db:seed --class=UsersTableSeeder`
 
 #### Project Approach
 - Create Appropriate API Endpoints
