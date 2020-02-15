@@ -13,7 +13,7 @@ class AddProductCampaignTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_campaign', function (Blueprint $table) {
+        Schema::create('product_campaign_users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
@@ -28,6 +28,6 @@ class AddProductCampaignTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_campaign');
+        Schema::dropIfExists('product_campaign_users');
     }
 }
