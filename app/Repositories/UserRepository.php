@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Interfaces\UserInterface;
-use App\Models\ProductCampaign;
+use App\Models\ProductCampaignUser;
 use Illuminate\Database\Eloquent\Collection;
 use App\Models\User;
 
@@ -25,7 +25,7 @@ class UserRepository implements UserInterface
         $newUser = User::create($user);
         // create a new row in product campaign
 
-        $campaign = new ProductCampaign();
+        $campaign = new ProductCampaignUser();
         $campaign->user_id = $newUser->id;
         $campaign->save();
     }
