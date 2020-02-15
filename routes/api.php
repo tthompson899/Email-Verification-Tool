@@ -13,5 +13,5 @@
 
 Route::prefix('user')->group(function () {
     // this needs to be a post method
-    Route::get('/create', 'ApiUserController@create')->name('api.users.create');
+    Route::post('/create', 'ApiUserController@create')->name('api.users.create');
 });
