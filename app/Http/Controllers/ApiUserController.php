@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Interfaces\UserInterface;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Database\Eloquent\Collection;
-use App\Models\User;
-
 
 class ApiUserController extends BaseController
 {
@@ -40,6 +38,8 @@ class ApiUserController extends BaseController
         }
 
         $this->users->create($data);
+
+        return 'user created...';
     }
 
     /**
