@@ -1,4 +1,4 @@
-## Email Verification Tool - CM Code Challenge
+## Email Verification Tool
 
 #### Setup
 
