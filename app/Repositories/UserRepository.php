@@ -22,5 +22,6 @@ class UserRepository implements UserInterface
     public function create($user)
     {
         User::create($user);
+        // create a new row in product campaign
     }
 }
