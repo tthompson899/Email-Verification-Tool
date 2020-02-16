@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Interfaces\UserInterface;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Request;
 
 class ApiUserController extends BaseController
 {
@@ -25,10 +25,10 @@ class ApiUserController extends BaseController
     /**
      * Create new user
      */
-    public function create()
+    public function create(Request $request)
     {
         # only get the requested data
-        $data = request()->only('first_name', 'last_name', 'email');
+        $data = $request->only(['first_name', 'last_name', 'email']);
         
         # verify user
         $email = $data['email'];
@@ -48,10 +48,15 @@ class ApiUserController extends BaseController
      * @param string $email
      * @return object
      */
-    public function verify($email)
+    protected function verify($email)
     {
         // check if email is already in the database
         $user = $this->users->findBy($email);
-        return $user;
+
+        if ($user) {
+            return $user;
+        }
+
+        return false;
     }
 }
