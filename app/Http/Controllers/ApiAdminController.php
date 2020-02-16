@@ -18,6 +18,9 @@ class ApiAdminController extends BaseController
         $this->users = $users;
     }
 
+    /**
+     * Get all users
+     */
     public function all()
     {
         $allUsers = $this->users->all();
