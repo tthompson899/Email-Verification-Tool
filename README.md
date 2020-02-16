@@ -7,7 +7,7 @@
     <!-- see if there is a setup process for laravel valet -->
 
 - Seed User table with data
-    - `php artisan db:seed --class=UsersTableSeeder`
+    - `php artisan db:seed`
 
 #### Project Approach
 - Create Appropriate API Endpoints
@@ -18,10 +18,18 @@
     - admin/list all - Admin endpoint that lists all email addresses in db
 
 - Database schema
-    - first_name
-    - last_name
-    - email
-    - a flag to determine if it's for the new product
+    *users:*
+    id
+    first_name
+    last_name
+    email
+    created_at
+    updated_at
+
+    *product_campaign_users table:*
+    user_id
+    created_at
+    updated_at
 
 - Create Test Data Tool
     - command that populates the database with test data

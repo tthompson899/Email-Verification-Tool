@@ -34,12 +34,12 @@ class ApiUserController extends BaseController
         $email = $data['email'];
 
         if ($previousUser = $this->verify($email)) {
-            return $previousUser->first_name . ' is already active.';
+            return 'Unable to add user, ' . $previousUser->first_name . ' is already active.';
         }
 
-        $this->users->create($data);
-
-        return 'user created...';
+        if ($user = $this->users->create($data)) {
+            return 'User created.';
+        }
     }
 
     /**
