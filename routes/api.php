@@ -11,8 +11,7 @@
 |
 */
 
-Route::prefix('user')->group(function () {
-    // this needs to be a post method
+Route::prefix('user')->middleware('throttle:5,60')->group(function () {
     Route::post('/create', 'ApiUserController@create')->name('api.users.create');
 });
 
