@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ProductCampaignUser extends Model
 {
@@ -24,8 +25,7 @@ class ProductCampaignUser extends Model
     ];
 
     /**
-     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
-
+     * @return BelongsTo
      */
     public function user()
     {
