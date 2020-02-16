@@ -15,4 +15,9 @@ interface UserInterface
      * Create new user
      */
     public function create($user);
+
+    /**
+     * Get all users
+     */
+    public function all();
 }

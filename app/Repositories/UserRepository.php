@@ -19,6 +19,8 @@ class UserRepository implements UserInterface
 
     /**
      * Create new user
+     *
+     * @return bool
      */
     public function create($user)
     {
@@ -28,5 +30,17 @@ class UserRepository implements UserInterface
         $campaign = new ProductCampaignUser();
         $campaign->user_id = $newUser->id;
         $campaign->save();
+
+        return true;
+    }
+
+    /**
+     * Get all users
+     */
+    public function all()
+    {
+        $users = User::get();
+        
+        return $users->sortByDesc('id');
     }
 }
