@@ -13,6 +13,10 @@ class ApiAdminController extends BaseController
      */
     protected $users;
 
+    /**
+     * ApiAdminController constructor.
+     * @param UserInterface $users
+     */
     public function __construct(UserInterface $users)
     {
         $this->users = $users;
@@ -23,8 +27,6 @@ class ApiAdminController extends BaseController
      */
     public function all()
     {
-        $allUsers = $this->users->all();
-
-        return $allUsers;
+        return $this->users->all();
     }
 }

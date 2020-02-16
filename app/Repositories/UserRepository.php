@@ -11,6 +11,8 @@ class UserRepository implements UserInterface
 {
     /**
      * Find user by email
+     * @param $email
+     * @return object
      */
     public function findBy($email)
     {
@@ -20,12 +22,12 @@ class UserRepository implements UserInterface
     /**
      * Create new user
      *
+     * @param $user
      * @return bool
      */
     public function create($user)
     {
         $newUser = User::create($user);
-        // create a new row in product campaign
 
         $campaign = new ProductCampaignUser();
         $campaign->user_id = $newUser->id;
@@ -40,7 +42,7 @@ class UserRepository implements UserInterface
     public function all()
     {
         $users = User::get();
-        
+
         return $users->sortByDesc('id');
     }
 }

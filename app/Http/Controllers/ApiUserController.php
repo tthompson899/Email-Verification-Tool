@@ -15,7 +15,7 @@ class ApiUserController extends BaseController
     protected $users;
 
     /**
-    * @param UserInterface
+    * @param $users UserInterface
     */
     public function __construct(UserInterface $users)
     {
@@ -24,12 +24,14 @@ class ApiUserController extends BaseController
 
     /**
      * Create new user
+     * @param Request $request
+     * @return string
      */
     public function create(Request $request)
     {
         # only get the requested data
         $data = $request->only(['first_name', 'last_name', 'email']);
-        
+
         # verify user
         $email = $data['email'];
 
@@ -46,7 +48,7 @@ class ApiUserController extends BaseController
      * Verify email
      *
      * @param string $email
-     * @return object
+     * @return object|bool
      */
     protected function verify($email)
     {

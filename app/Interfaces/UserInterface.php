@@ -8,11 +8,13 @@ interface UserInterface
 {
     /**
      * Find user by email
+     * @param $email
      */
     public function findBy($email);
 
     /**
      * Create new user
+     * @param $user
      */
     public function create($user);
 
