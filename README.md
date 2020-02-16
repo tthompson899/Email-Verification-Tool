@@ -3,8 +3,35 @@
 #### Setup
 
 - Laravel valet
+    - If you do not have Laravel Valet installed, follow the instructions [here](https://laravel.com/docs/6.x/valet#installation) 
+        ##### TL/DR
+        - `brew update`
+        - `brew install php`
+        - Install composer [here](https://getcomposer.org/)
+        - `composer global require laravel/valet`. Make sure the ~/.composer/vendor/bin directory is in your system's "PATH".
+        - `valet install`
+    - Directions to serve the site (https://laravel.com/docs/6.x/valet#serving-sites): 
+        ##### TL/DR
+        - In your terminal, make a new directory for the project: 
+            - `mkdir ~/Code`
+            - `cd ~/Code`
+            - run `valet park`
+    - Fork or clone project here into `~/Code` directory: [email verification tool](https://github.com/tthompson899/Email-Verification-Tool.git)
     - Once project is cloned, spin up the website at [emailverificationtool.test](http://emailverificationtool.test/)
-    <!-- see if there is a setup process for laravel valet -->
+
+- MySQL
+    - `brew install mysql@5.7`
+    - `brew services start mysql@5.7`
+
+    - Once valet and project has been cloned locally, run `composer install`
+    - Database setup info is located in .env file, below is my setup
+        *DB_CONNECTION=mysql
+           DB_HOST=127.0.0.1
+           DB_PORT=3306
+           DB_DATABASE=email_verification
+           DB_USERNAME=root
+           DB_PASSWORD=password*
+        
 
 #### Project Approach
 - Create Appropriate API Endpoints
@@ -43,7 +70,9 @@
     - test for verify email
     - test for creating email
 
+    - If you installed via Laravel Valet, in order to run tests, you may have to use `vendor/bin/phpunit tests/Feature/UserTest.php`
+
 - Safety concerns
     - validate email
 
-    - I'm only allowing the request values specified (first_name, last_name, email) in an effort to prevent unwanted data coming in the form. I'm also throttling requests to five per hour to prevent several requests per minute.
+    - I only allowing the request values specified (first_name, last_name, email) in an effort to prevent unwanted data coming in the form. I'm also throttling requests to five per hour to prevent several requests per minute.
