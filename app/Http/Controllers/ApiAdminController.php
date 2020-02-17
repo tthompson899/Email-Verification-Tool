@@ -24,6 +24,8 @@ class ApiAdminController extends BaseController
 
     /**
      * Get all users
+     *
+     * @return object
      */
     public function all()
     {

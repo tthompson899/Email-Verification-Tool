@@ -38,6 +38,8 @@ class UserRepository implements UserInterface
 
     /**
      * Get all users
+     *
+     * @return object
      */
     public function all()
     {
