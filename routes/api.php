@@ -16,5 +16,5 @@ Route::prefix('users')->middleware('throttle:5,60')->group(function () {
 });
 
 Route::prefix('admin')->group(function () {
-    Route::get('all', 'ApiAdminController@all')->name('api.admin.all');
+    Route::get('users', 'ApiAdminController@users')->name('api.admin.users');
 });

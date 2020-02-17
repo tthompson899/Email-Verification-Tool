@@ -27,7 +27,7 @@ class ApiAdminController extends BaseController
      *
      * @return object
      */
-    public function all()
+    public function users()
     {
         return $this->users->all();
     }
