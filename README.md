@@ -24,21 +24,21 @@
     - `brew services start mysql@5.7`
 
     - Once valet and project has been cloned locally, run `composer install`
-    - Database setup info is located in .env file, below is my setup
-        *DB_CONNECTION=mysql
-           DB_HOST=127.0.0.1
-           DB_PORT=3306
-           DB_DATABASE=email_verification
-           DB_USERNAME=root
-           DB_PASSWORD=password*
+    - Database setup info is located in .env file, below is my setup  
+           DB_CONNECTION=mysql  
+           DB_HOST=127.0.0.1  
+           DB_PORT=3306  
+           DB_DATABASE=email_verification  
+           DB_USERNAME=root  
+           DB_PASSWORD=password  
         
 #### How to view project
 
-- The API can be accessed via a tool for API testing, I used Postman
-     - To register a user, navigate to: *http://emailverificationtool.test/api/users/create*
+- The API can be accessed via a tool for API testing, I used Insomnia
+     - To register a user, navigate to: http://emailverificationtool.test/api/users/create
         - Enter first_name, last_name and email values
      - To view all users, navigate to:
-        - *http://emailverificationtool.test/api/admin/users*
+        - http://emailverificationtool.test/api/admin/users
 
 #### Project Approach
 - Create Appropriate API Endpoints
