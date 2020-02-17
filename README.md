@@ -35,7 +35,7 @@
 #### How to view project
 
 - The API can be accessed via a tool for API testing, I used Postman
-     - To register a user, navigate to: *http://emailverificationtool.test/api/user/create*
+     - To register a user, navigate to: *http://emailverificationtool.test/api/users/create*
         - Enter first_name, last_name and email values
      - To view all users, navigate to:
         - *http://emailverificationtool.test/api/admin/all*
