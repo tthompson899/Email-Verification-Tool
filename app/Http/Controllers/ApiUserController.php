@@ -29,13 +29,18 @@ class ApiUserController extends BaseController
      */
     public function create(Request $request)
     {
+        if (! $request->email) {
+            return 'Email is required.';
+        }
+
+        if (! filter_var($request->email, FILTER_VALIDATE_EMAIL)) {
+            return 'Email is invalid.';
+        }
+
         # only get the requested data
         $data = $request->only(['first_name', 'last_name', 'email']);
 
-        # verify user
-        $email = $data['email'];
-
-        if ($previousUser = $this->verify($email)) {
+        if ($previousUser = $this->verify($data['email'])) {
             return 'Unable to add user, ' . $previousUser->first_name . ' is already active.';
         }
 
