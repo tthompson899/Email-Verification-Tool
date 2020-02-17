@@ -32,6 +32,13 @@
            DB_USERNAME=root
            DB_PASSWORD=password*
         
+#### How to view project
+
+- The API can be accessed via a tool for API testing, I used Postman
+     - To register a user, navigate to: *http://emailverificationtool.test/api/user/create*
+        - Enter first_name, last_name and email values
+     - To view all users, navigate to:
+        - *http://emailverificationtool.test/api/admin/all*
 
 #### Project Approach
 - Create Appropriate API Endpoints
@@ -47,12 +54,12 @@
 
         | users      | product_campaign_users |
         | --------   | ---------------------- |
-        | id         | id |
-        | first_name | user_id |
-        | last_name  | created_at |
-        | email      | updated_at |
-        | created_at |            |
-        | updated_at |            |
+        | id         | id                     |
+        | first_name | user_id                |
+        | last_name  | created_at             |
+        | email      | updated_at             |
+        | created_at |                        |
+        | updated_at |                        |
         
     - The users table lists all users. The idea behind the product_campaign_users table is that only users that were added to the new campaign will be on this table; it also leaves room to build on if there are multiple product campaigns, you can then add multiple products and users to this table. Ex. You have Product A and Product B, there's potential to add a column product_a and product_b which can both be boolean to determine if the user was signed on with which campaign. 
 
